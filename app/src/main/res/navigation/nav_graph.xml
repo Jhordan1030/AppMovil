@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_reservas">
+
+    <fragment
+        android:id="@+id/navigation_reservas"
+        android:name="com.example.apphotel.ui.reservas.ReservasFragment"
+        android:label="Reservas"
+        tools:layout="@layout/fragment_reservas">
+        <action
+            android:id="@+id/action_navigation_reservas_to_reservaCreateFragment"
+            app:destination="@id/reservaCreateFragment" />
+        <action
+            android:id="@+id/action_navigation_reservas_to_reservaDetailFragment"
+            app:destination="@id/reservaDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reservaCreateFragment"
+        android:name="com.example.apphotel.ui.reservas.create.ReservaCreateFragment"
+        android:label="Nueva Reserva"
+        tools:layout="@layout/fragment_reserva_create" />
+
+    <fragment
+        android:id="@+id/reservaDetailFragment"
+        android:name="com.example.apphotel.ui.reservas.detail.ReservaDetailFragment"
+        android:label="Detalle de Reserva"
+        tools:layout="@layout/fragment_reserva_detail">
+        <argument
+            android:name="reservaId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_huespedes"
+        android:name="com.example.apphotel.ui.huespedes.HuespedesFragment"
+        android:label="Huéspedes"
+        tools:layout="@layout/fragment_huespedes">
+        <action
+            android:id="@+id/action_navigation_huespedes_to_huespedFormFragment"
+            app:destination="@id/huespedFormFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/huespedFormFragment"
+        android:name="com.example.apphotel.ui.huespedes.form.HuespedFormFragment"
+        android:label="Huésped"
+        tools:layout="@layout/fragment_huesped_form">
+        <argument
+            android:name="huespedId"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_habitaciones"
+        android:name="com.example.apphotel.ui.habitaciones.HabitacionesFragment"
+        android:label="Habitaciones"
+        tools:layout="@layout/fragment_habitaciones" />
+
+</navigation>

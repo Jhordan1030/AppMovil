@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_detail_item"
+    android:padding="12dp"
+    android:layout_marginVertical="4dp">
+
+    <!-- Room icon circle -->
+    <View
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:background="@drawable/bg_icon_circle" />
+
+    <TextView
+        android:id="@+id/text_habitacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="12dp"
+        android:textSize="14sp"
+        android:textColor="@color/text_primary"
+        android:text="Hab. 101 - SIMPLE" />
+
+    <TextView
+        android:id="@+id/text_precio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:text="$45.00" />
+
+    <ImageButton
+        android:id="@+id/btn_remove"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/bg_delete_circle"
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:src="@android:drawable/ic_menu_delete"
+        app:tint="@color/status_cancelled"
+        android:contentDescription="Eliminar detalle" />
+
+</LinearLayout>

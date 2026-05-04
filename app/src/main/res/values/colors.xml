@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Modern Light Theme · Teal & Warm Cream                 -->
+    <!-- A premium, clean palette inspired by boutique hotels    -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+
+    <!-- Primary: Refined Teal -->
+    <color name="colorPrimary">#0D9488</color>         <!-- Teal 600 -->
+    <color name="colorPrimaryVariant">#0F766E</color>   <!-- Teal 700 -->
+    <color name="colorPrimaryLight">#99F6E4</color>     <!-- Teal 200 -->
+    <color name="colorPrimarySurface">#F0FDFA</color>   <!-- Teal 50 -->
+    <color name="colorOnPrimary">#FFFFFF</color>
+
+    <!-- Secondary: Warm Amber -->
+    <color name="colorSecondary">#D97706</color>        <!-- Amber 600 -->
+    <color name="colorSecondaryVariant">#B45309</color>  <!-- Amber 700 -->
+    <color name="colorOnSecondary">#FFFFFF</color>
+
+    <!-- Backgrounds: Warm cream tones -->
+    <color name="background">#FAFAF5</color>            <!-- Warm off-white -->
+    <color name="surface">#FFFFFF</color>               <!-- Pure white cards -->
+    <color name="surfaceVariant">#F5F5F0</color>        <!-- Slightly warm gray -->
+    <color name="error">#DC2626</color>                 <!-- Red 600 -->
+
+    <!-- Text Colors -->
+    <color name="text_primary">#1C1917</color>          <!-- Stone 900 -->
+    <color name="text_secondary">#78716C</color>        <!-- Stone 400 -->
+    <color name="text_hint">#A8A29E</color>             <!-- Stone 300 -->
+
+    <!-- Divider & Border -->
+    <color name="divider">#E7E5E4</color>               <!-- Stone 200 -->
+    <color name="card_stroke">#E7E5E4</color>           <!-- Stone 200 -->
+
+    <!-- Semantic Status Colors (Softened, pastel-ish) -->
+    <color name="status_available">#059669</color>      <!-- Emerald 600 -->
+    <color name="status_available_bg">#ECFDF5</color>   <!-- Emerald 50 -->
+    <color name="status_occupied">#D97706</color>       <!-- Amber 600 -->
+    <color name="status_occupied_bg">#FFFBEB</color>    <!-- Amber 50 -->
+    <color name="status_maintenance">#6B7280</color>    <!-- Gray 500 -->
+    <color name="status_maintenance_bg">#F3F4F6</color> <!-- Gray 100 -->
+    <color name="status_cancelled">#DC2626</color>      <!-- Red 600 -->
+    <color name="status_cancelled_bg">#FEF2F2</color>   <!-- Red 50 -->
+    <color name="status_checkout">#7C3AED</color>       <!-- Violet 600 -->
+    <color name="status_checkout_bg">#F5F3FF</color>    <!-- Violet 50 -->
+
+    <!-- FAB Colors -->
+    <color name="fab_background">#0D9488</color>
+    <color name="fab_icon">#FFFFFF</color>
+
+    <!-- Bottom Nav -->
+    <color name="nav_active">#0D9488</color>
+    <color name="nav_inactive">#A8A29E</color>
+    <color name="nav_indicator">#F0FDFA</color>
+
+    <!-- Toolbar -->
+    <color name="toolbar_bg">#FFFFFF</color>
+    <color name="toolbar_title">#1C1917</color>
+</resources>

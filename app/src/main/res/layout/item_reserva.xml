@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.AppHotel.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Reservation Code -->
+        <TextView
+            android:id="@+id/text_codigo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            app:layout_constraintEnd_toStartOf="@id/text_estado"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="RES-2026-0001" />
+
+        <!-- Status Badge (pill) -->
+        <TextView
+            android:id="@+id/text_estado"
+            style="@style/Widget.AppHotel.StatusBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/status_available_bg"
+            android:textColor="@color/status_available"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="CHECKOUT" />
+
+        <!-- Guest name -->
+        <TextView
+            android:id="@+id/text_huesped"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_codigo"
+            android:text="Carlos Mendoza López" />
+
+        <!-- Dates -->
+        <TextView
+            android:id="@+id/text_fechas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_huesped"
+            android:text="01/05/2026 - 04/05/2026 (3 noches)" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/card_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/divider"
+            app:layout_constraintTop_toBottomOf="@id/text_fechas" />
+
+        <!-- Total Price -->
+        <TextView
+            android:id="@+id/text_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_divider"
+            android:text="$520.80" />
+
+        <!-- Delete Button -->
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_delete_circle"
+            android:scaleType="centerInside"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_menu_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_divider"
+            android:contentDescription="Eliminar"
+            app:tint="@color/status_cancelled" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

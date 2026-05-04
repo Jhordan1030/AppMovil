@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.AppHotel.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Avatar Circle with initials placeholder -->
+        <View
+            android:id="@+id/avatar_bg"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_icon_circle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_avatar"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="@id/avatar_bg"
+            app:layout_constraintTop_toTopOf="@id/avatar_bg"
+            app:layout_constraintEnd_toEndOf="@id/avatar_bg"
+            app:layout_constraintBottom_toBottomOf="@id/avatar_bg"
+            android:text="CM" />
+
+        <!-- Full Name -->
+        <TextView
+            android:id="@+id/text_nombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintEnd_toStartOf="@id/btn_delete"
+            app:layout_constraintStart_toEndOf="@id/avatar_bg"
+            app:layout_constraintTop_toTopOf="@id/avatar_bg"
+            android:text="Carlos Mendoza López" />
+
+        <!-- Cédula -->
+        <TextView
+            android:id="@+id/text_cedula"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="2dp"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintEnd_toStartOf="@id/btn_delete"
+            app:layout_constraintStart_toEndOf="@id/avatar_bg"
+            app:layout_constraintTop_toBottomOf="@id/text_nombre"
+            android:text="C.I.: 1712345678" />
+
+        <!-- Email below -->
+        <TextView
+            android:id="@+id/text_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="8dp"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/avatar_bg"
+            android:text="carlos.mendoza@email.com" />
+
+        <!-- Delete Button -->
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_delete_circle"
+            android:scaleType="centerInside"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_menu_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="Eliminar"
+            app:tint="@color/status_cancelled" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
