@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.apphotel.R
 import com.example.apphotel.databinding.FragmentHabitacionesBinding
-import com.example.apphotel.model.Habitacion
 import com.example.apphotel.ui.adapter.HabitacionAdapter
 import com.example.apphotel.viewmodel.HabitacionViewModel
 
@@ -18,8 +18,6 @@ class HabitacionesFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: HabitacionViewModel by viewModels()
     private lateinit var adapter: HabitacionAdapter
-
-    private val estadosDisponibles = arrayOf("DISPONIBLE", "OCUPADA", "MANTENIMIENTO")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,17 +33,22 @@ class HabitacionesFragment : Fragment() {
         setupRecyclerView()
         observeViewModel()
         viewModel.loadHabitaciones()
-        
+
+        // FAB → Crear nueva habitación
         binding.fabAddHabitacion.setOnClickListener {
-            // TODO: Navigate to create habitacion
-            Toast.makeText(context, "Crear habitación no implementado aún", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_navigation_habitaciones_to_habitacionFormFragment)
         }
     }
 
     private fun setupRecyclerView() {
         adapter = HabitacionAdapter(emptyList(), { habitacion ->
-            showChangeStatusDialog(habitacion)
+            // Click en tarjeta → Editar habitación
+            val bundle = Bundle().apply {
+                putString("habitacionId", habitacion.id)
+            }
+            findNavController().navigate(R.id.action_navigation_habitaciones_to_habitacionFormFragment, bundle)
         }, { habitacion ->
+            // Click en eliminar → Confirmación
             androidx.appcompat.app.AlertDialog.Builder(requireContext())
                 .setTitle(getString(R.string.btn_delete))
                 .setMessage(getString(R.string.msg_delete_habitacion_confirm, habitacion.numero))
@@ -56,32 +59,6 @@ class HabitacionesFragment : Fragment() {
                 .show()
         })
         binding.recyclerHabitaciones.adapter = adapter
-    }
-
-    private fun showChangeStatusDialog(habitacion: Habitacion) {
-        val currentIndex = estadosDisponibles.indexOf(habitacion.estado)
-
-        androidx.appcompat.app.AlertDialog.Builder(requireContext())
-            .setTitle("Cambiar estado de Hab. ${habitacion.numero}")
-            .setSingleChoiceItems(estadosDisponibles, currentIndex) { dialog, which ->
-                val newEstado = estadosDisponibles[which]
-                if (newEstado != habitacion.estado) {
-                    val updated = Habitacion(
-                        id = habitacion.id,
-                        numero = habitacion.numero,
-                        tipo = habitacion.tipo,
-                        piso = habitacion.piso,
-                        precioNoche = habitacion.precioNoche,
-                        capacidad = habitacion.capacidad,
-                        descripcion = habitacion.descripcion,
-                        estado = newEstado
-                    )
-                    habitacion.id?.let { viewModel.updateHabitacion(it, updated) }
-                }
-                dialog.dismiss()
-            }
-            .setNegativeButton(getString(R.string.btn_cancel), null)
-            .show()
     }
 
     private fun observeViewModel() {

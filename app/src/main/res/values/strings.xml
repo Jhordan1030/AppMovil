@@ -37,4 +37,14 @@
     <string name="label_checkin">Check-in</string>
     <string name="label_checkout">Check-out</string>
     <string name="label_detalle_habitaciones">Detalle de Habitaciones</string>
+
+    <string name="title_nueva_habitacion">Nueva Habitación</string>
+    <string name="title_editar_habitacion">Editar Habitación</string>
+    <string name="label_numero_habitacion">Número de habitación</string>
+    <string name="label_tipo_habitacion">Tipo de habitación</string>
+    <string name="label_piso">Piso</string>
+    <string name="label_capacidad">Capacidad</string>
+    <string name="label_precio_noche">Precio por noche ($)</string>
+    <string name="label_descripcion">Descripción</string>
+    <string name="label_estado">Estado</string>
 </resources>
